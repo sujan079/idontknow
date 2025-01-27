@@ -1,0 +1,7 @@
+a socket is a interface or gate for 
+communcation between two different
+processes  located on the same or different
+machines . In the latter case,  we speak about 
+network sockets.
+
+git 
