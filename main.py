@@ -1,6 +1,7 @@
 # installing the necessary module for the projects
 
 
+
 import tkinter as tk
 from tkinter import messagebox  # pop up  message
 import heapq  # for min heap datastructure
@@ -8,7 +9,7 @@ import heapq  # for min heap datastructure
 
 # creating the main application window
 
-class TodoApp:
+class todolist:
     def __init__(self, root):  # self constructor
         self.root = root
         self.root.title("To-Do list")
@@ -31,6 +32,7 @@ class TodoApp:
 
         self.priority_label.pack(pady=10)
         self.priority_entry = tk.Entry(self.root, width=40)
+        self.priority_entry.pack(pady=10)
 
         # button
         self.add_task_button = tk.Button(
@@ -39,17 +41,16 @@ class TodoApp:
 
         # task list
         self.task_listbox = tk.Listbox(self.root, width=50, height=10)
-        self.task_listbox.pack(pady=5)
+        self.task_listbox.pack(pady=10)
 
         # complete task button
         self.complete_button = tk.Button(
             self.root, text="Complete task", command=self.complete_task)
-        self.complete_button.pack(pady=5)
+        self.complete_button.pack(pady=10)
 
         self.refresh_button = tk.Button(
             self.root, text="Refresh", command=self.update_tasks_listbox)
-        self.refresh_button.pack(pady=5)
-
+        self.refresh_button.pack(pady=10)
 
     def add_task(self):
         task = self.task_entry.get()
@@ -89,5 +90,5 @@ class TodoApp:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = TodoApp(root)
+    app = todolist(root)
     root.mainloop()
