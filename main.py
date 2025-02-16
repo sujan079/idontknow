@@ -4,7 +4,7 @@
 
 import tkinter as tk
 from tkinter import messagebox  # pop up  message
-import heapq  # for min heap datastructure
+import heapq # for min heap datastructure
 
 
 # creating the main application window
@@ -17,8 +17,10 @@ class todolist:
         self.task_set = set()  # hash set to avoid duplicate
 
 
-# UI elements for create widgets
+        # UI elements for create widgets
         self.create_widgets()
+        
+        
 
     def create_widgets(self):
         # task entry
@@ -48,9 +50,6 @@ class todolist:
             self.root, text="Complete task", command=self.complete_task)
         self.complete_button.pack(pady=10)
 
-        self.refresh_button = tk.Button(
-            self.root, text="Refresh", command=self.update_tasks_listbox)
-        self.refresh_button.pack(pady=10)
 
     def add_task(self):
         task = self.task_entry.get()
@@ -64,7 +63,7 @@ class todolist:
 
 # take task and priority,validate inputs and add them to priotiy queue and update the listbox
     # add task to the priority queue
-        heapq.heappush(self.tasks, (int(priority), task))
+        heapq.heappush(self.tasks, (int(priority), task)) 
         self.task_set.add(task)
         self.update_tasks_listbox()  # refresh the listbox
         self.task_entry.delete(0, tk.END)
